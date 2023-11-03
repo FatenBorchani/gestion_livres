@@ -2,6 +2,8 @@ const Book=require("../models/book")
 const getlivre=(req, res) => {
     
     Book.findOne({ author:req.params.author })
+    .populate("author")
+    .populate("category")
       .then(book => {
         if (book) {
           res.status(200).json({
