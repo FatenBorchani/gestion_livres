@@ -1,6 +1,6 @@
-const Author=require("../models/category")
+const Category=require("../models/category")
 const addcategory=(req, res) => {
-    const newCategory = new Author(req.body);
+    const newCategory = new Category(req.body);
     newCategory.save()
       .then(() => {
         res.status(201).json({
